@@ -7,7 +7,7 @@ export default function TravelsPage() {
     return (
         <>
             <div className="container">
-                <h1 className="my-5">VIAGGI FANTOZZIANI</h1>
+                <h1 className="my-4">Viaggi Fantozziani</h1>
                 {db.map(travel => (
                     <Link to={`/${travel.id}`} key={travel.id} className="text-decoration-none">
                         <div className="travel_card card mb-3 p-3" >
