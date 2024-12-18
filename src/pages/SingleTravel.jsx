@@ -9,8 +9,9 @@ export default function SingleTravel() {
 
     const selectedTravel = db.find(travel => travel.id === Number(id))
 
-    const [participants, setParticipants] = useState(selectedTravel.participants)
+    const allParticipants = selectedTravel.participants
 
+    const [searchedParticipants, setSearchedParticipants] = useState([])
 
     return (
         <>
@@ -20,8 +21,8 @@ export default function SingleTravel() {
                 <p><strong>Fine: </strong>{selectedTravel.endDate}</p>
                 <Link to={"/"}><button className='btn btn-secondary mt-2 mb-4'>Torna indietro</button></Link>
                 <br />
-                <SearchBar participants={participants} setParticipants={setParticipants} />
-                {participants.map(p => (
+                <SearchBar allParticipants={allParticipants} searchedParticipants={searchedParticipants} setSearchedParticipants={setSearchedParticipants} />
+                {searchedParticipants.map(p => (
                     <div className="card mb-3 p-3" key={p.id}>
                         <h3>{p.firstName} {p.lastName}</h3>
                     </div>

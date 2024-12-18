@@ -66,8 +66,8 @@ const db = [
     {
         id: 3,
         destination: 'Barcellona',
-        startDate: '2024-05-15',
-        endDate: '2024-05-22',
+        startDate: '2024-12-15',
+        endDate: '2024-12-22',
         participants: [
             {
                 id: 301,
@@ -130,8 +130,8 @@ const db = [
     {
         id: 5,
         destination: 'Londra',
-        startDate: '2024-07-01',
-        endDate: '2024-07-08',
+        startDate: '2024-12-01',
+        endDate: '2024-12-20',
         participants: [
             {
                 id: 501,

@@ -1,19 +1,16 @@
 import { useEffect, useState } from "react";
 
 
-export default function SearchBar({ participants, setParticipants }) {
+export default function SearchBar({ allParticipants, setSearchedParticipants }) {
 
     const [searchText, setSearchText] = useState("");
 
 
-    function HandleSearch(searchText) {
+    function HandleSearch() {
 
-        console.log(searchText);
+        const filteredParticipants = allParticipants.filter(p => `${p.firstName} ${p.lastName}`.toLowerCase().includes(searchText.toLowerCase()))
 
-
-        const filteredParticipants = participants.filter(p => `${p.firstName} ${p.lastName}`.toLowerCase().includes(searchText))
-        setParticipants(filteredParticipants)
-
+        setSearchedParticipants(filteredParticipants)
 
     }
 
