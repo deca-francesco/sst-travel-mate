@@ -15,6 +15,7 @@ export default function SingleTravel() {
                 <p><strong>Inizio: </strong>{selectedTravel.startDate}</p>
                 <p><strong>Fine: </strong>{selectedTravel.endDate}</p>
                 <Link to={"/"}><button className='btn btn-secondary mt-2 mb-4'>Torna indietro</button></Link>
+                <SearchBar />
                 {selectedTravel.participants.map(participant => (
                     <div className="card mb-3 p-3" key={participant.id}>
                         <h3>{participant.firstName} {participant.lastName}</h3>
