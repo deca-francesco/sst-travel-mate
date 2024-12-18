@@ -1,11 +1,15 @@
 import { Link, useParams } from 'react-router-dom';
 import db from '../db/data';
+import SearchBar from '../components/SearchBar';
+import { useState } from 'react';
 
 export default function SingleTravel() {
 
     const { id } = useParams()
 
     const selectedTravel = db.find(travel => travel.id === Number(id))
+
+    const [participants, setParticipants] = useState(selectedTravel.participants)
 
 
     return (
@@ -15,10 +19,11 @@ export default function SingleTravel() {
                 <p><strong>Inizio: </strong>{selectedTravel.startDate}</p>
                 <p><strong>Fine: </strong>{selectedTravel.endDate}</p>
                 <Link to={"/"}><button className='btn btn-secondary mt-2 mb-4'>Torna indietro</button></Link>
-                <SearchBar />
-                {selectedTravel.participants.map(participant => (
-                    <div className="card mb-3 p-3" key={participant.id}>
-                        <h3>{participant.firstName} {participant.lastName}</h3>
+                <br />
+                <SearchBar participants={participants} setParticipants={setParticipants} />
+                {participants.map(p => (
+                    <div className="card mb-3 p-3" key={p.id}>
+                        <h3>{p.firstName} {p.lastName}</h3>
                     </div>
                 ))}
             </div>
