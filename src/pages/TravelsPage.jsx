@@ -12,22 +12,22 @@ export default function TravelsPage() {
     })
 
 
-
-
-
     return (
         <>
             <div className="container">
-                <h1 className="my-4">Viaggi Fantozziani</h1>
-                {currentTravels.map(travel => (
-                    (<Link to={`/${travel.id}`} key={travel.id} className="text-decoration-none">
-                        <div className="travel_card card mb-3 p-3" >
-                            <h2>{travel.destination}</h2>
-                            <p>Inizio: {travel.startDate} | Fine: {travel.endDate}</p>
-                        </div>
-                    </Link>
-                    )
-                ))}
+                <h1 className="my-4">Travel Mate Viaggi</h1>
+                <section id="current_travels">
+                    <h2 className="mb-4">Viaggi in corso:</h2>
+                    {currentTravels.map(travel => (
+                        <Link to={`/${travel.id}`} key={travel.id} className="text-decoration-none">
+                            <div className="travel_card card shadow mb-3 p-3" >
+                                <h3>{travel.destination}</h3>
+                                <p className="my-0"><strong>Inizio: </strong>{travel.startDate}</p>
+                                <p><strong>Fine: </strong>{travel.endDate}</p>
+                            </div>
+                        </Link>
+                    ))}
+                </section>
             </div >
         </>
     )
