@@ -6,11 +6,10 @@ export default function SearchBar({ allParticipants, setSearchedParticipants }) 
     const [searchText, setSearchText] = useState("");
 
     function HandleSearch() {
-
+        // filter on original array
         const filteredParticipants = allParticipants.filter(p => `${p.firstName} ${p.lastName}`.toLowerCase().includes(searchText.toLowerCase()))
-
+        // save in support array and show search results
         setSearchedParticipants(filteredParticipants)
-
     }
 
     useEffect(HandleSearch, [searchText])

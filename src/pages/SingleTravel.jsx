@@ -9,8 +9,9 @@ export default function SingleTravel() {
 
     const selectedTravel = db.find(travel => travel.id === Number(id))
 
+    // original db array (const)
     const allParticipants = selectedTravel.participants
-
+    // support array for SearchBar component (reactive)
     const [searchedParticipants, setSearchedParticipants] = useState([])
 
     return (

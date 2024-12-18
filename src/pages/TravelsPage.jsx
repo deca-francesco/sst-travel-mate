@@ -5,6 +5,7 @@ export default function TravelsPage() {
 
     const now = new Date()
 
+    // convert db date strings to Date format to compare with now
     const currentTravels = db.filter(element => {
         const startDate = new Date(element.startDate)
         const endDate = new Date(element.endDate)
